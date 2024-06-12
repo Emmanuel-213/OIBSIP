@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPERATURE CONVERTER WEBSITE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+    <div class="logo">
+        <img src="images/icons8-temperature-high-100.png" alt="">
+    </div>
+    <h3>Temperature converter</h3>
+    <div class="content">
+        <input type="number" id="temperature" placeholder="Degrees" autocomplete="off">
+        <select id="temperature_unit">
+            <option value="celcius" id="celcius">Celcius</option>
+            <option value="fahrenheit" id="fahrenheit">Fahrenheit</option>
+        </select>
+    </div>
+    <hr>
+    <h5>The final conversion is <br>shown below</h5>
+    <p id="finalTemp"></p><hr>
+    <input type="button" onclick="submitButton()" value="Convert" id="convert">
+   </form>
+
+    <script>
+        function submitButton(){
+            const temperature =  document.getElementById("temperature").value;
+            const temperature_unit = document.getElementById("temperature_unit").value;
+            
+            if (temperature_unit == "celcius") {
+                finalTemp = temperature*(9/5)+32;
+                document.getElementById("finalTemp").innerHTML = finalTemp + " ℉";
+            }else if(temperature_unit == "fahrenheit"){
+                finalTemp = (temperature-32)*(5/9);
+                document.getElementById("finalTemp").innerHTML = finalTemp + " ℃";
+            }
+        }
+    </script>
+</body>
+</html>
