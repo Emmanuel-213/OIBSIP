@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator|| oasisinfobyte || intern</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div id="container" class="container">
+    <input id="display" readonly> 
+    <div id="keys" class="keys">
+        <button onclick="clickToDisplay('+')" class="operator-btn">+</button>
+        <button onclick="clickToDisplay('7')">7</button>
+        <button onclick="clickToDisplay('8')">8</button>
+        <button onclick="clickToDisplay('9')">9</button>
+        <button onclick="clickToDisplay('-')" class="operator-btn">-</button>
+        <button onclick="clickToDisplay('4')">4</button>
+        <button onclick="clickToDisplay('5')">5</button>
+        <button onclick="clickToDisplay('6')">6</button>
+        <button onclick="clickToDisplay('*')" class="operator-btn">x</button>
+        <button onclick="clickToDisplay('1')">1</button>
+        <button onclick="clickToDisplay('2')">2</button>
+        <button onclick="clickToDisplay('3')">3</button>
+        <button onclick="clickToDisplay('/')" class="operator-btn">/</button>
+        <button onclick="clickToDisplay('0')">0</button>
+        <button onclick="clickToDisplay('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="clearDisplay()" class="operator-btn">C</button>
+        <button onclick="backspace()" class="operator-btn">CE</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
