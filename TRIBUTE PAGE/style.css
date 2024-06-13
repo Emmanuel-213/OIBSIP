@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    width: 100%;
+    height: 140px;
+    padding-top: 20px;
+    text-align: center;
+    background: linear-gradient(rgb(187, 183, 244),rgb(217, 217, 219));
+}
+        /* styling for the image */
+.image{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(217, 217, 219),rgb(187, 183, 244));
+}
+.image img{
+    width: 450px;
+    height: 550px;
+}
+        /* biography  */
+.biography{
+    /* width: 100%; */
+    height: 500px;
+    border: 1px solid rgb(187, 183, 244);
+    background: linear-gradient(rgb(187, 183, 244),rgb(217, 217, 219));
+}
+.biography p{
+    margin-left: 20%;
+    margin-right: 20%;
+}
