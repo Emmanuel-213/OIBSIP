@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <div id="container">
+        <form action="">
+            <div class="heading">
+                <h3>WELCOME BACK</h3>
+            </div>
+            <div class="profilepic">
+                <img src="images/images.jpg" alt="No picture">
+            </div>
+            <div class="namepassword">
+                <label for="name">Full Name:</label><br>
+                    <input type="name" id="name" autocomplete="off" required>
+            </div><br>
+
+            <div class="namepassword">
+                <label for="password">Password:</label><br>
+                    <input type="password" id="password" autocomplete="off" required>
+            </div><br>
+
+            <button type="button" onclick="saveData()">SIGN IN</button>
+        </form>
+        <div class="signup">
+            <span>Dont have an account?</span>
+            <a href="signup.html">Sign up and get started!</a>
+        </div>
+    </div>
+    <script>
+        function saveData(){
+            let name, password;
+            name = document.getElementById("name").value;
+            password = document.getElementById("password").value;
+
+            let user_details = new Array();
+            user_details = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+            if (user_details.some((v)=>{
+                return v.name == name && v.password == password
+            })){
+                alert("login successful")
+                let current_user = user_details.filter((v)=>{
+                    return v.name == name && v.password == password
+                })[0]
+
+                localStorage.setItem("name", current_user.name);
+                localStorage.setItem("password", current_user.password);
+                window.location.href= "index.html";
+            }
+            else{
+                alert("login failed, enter a valid username and password")
+            }
+        }
+    </script>
+</body>
+</html>

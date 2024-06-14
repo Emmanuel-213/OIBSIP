@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div id="container">
+        <form action="#">
+            <div class="heading">
+                <h3>SIGN UP</h3>
+            </div>
+            <div class="profilepic">
+                <img src="images/logoi.png" alt="No picture">
+            </div>
+
+            <div class="namepassword">
+                <label for="name">Full Name:</label><br>
+                    <input type="name" id="name" name="name" autocomplete="off" required>
+            </div><br>
+
+            <div class="namepassword">
+                <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required>
+            </div><br>
+
+            <button type="button" onclick="saveData()">SIGN UP</button>
+        </form>
+        <div class="signin">
+            <span>Already have an account?</span>
+            <a href="signin.html">Log in here</a>
+        </div>
+    </div>
+    <script>
+        function saveData(){
+            let name, password;
+            name = document.getElementById("name").value;
+            password = document.getElementById("password").value;
+
+
+            let user_details = new Array();
+            user_details = JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+            if (user_details.some((v)=>{
+                return v.name==name
+            })){
+                alert("Name is taken already");
+            }
+            else if (user_details.some((v)=>{
+                return v.name==""
+            })){
+                alert("Enter a name and a password");
+            }
+            else{
+                user_details.push({
+                    "name":name,
+                    "password":password
+                })
+                localStorage.setItem("users", JSON.stringify(user_details))
+            }
+        };
+    </script>
+</body>
+</html>
