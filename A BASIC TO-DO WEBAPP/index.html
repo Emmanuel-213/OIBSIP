@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A BASIC TO-DO WEBAPP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="list">
+            <input type="text" id="taskInput" autocomplete="off" placeholder="Enter your task here....">
+            <span>
+                <button id="addTask">save</button>
+            </span>
+        </div>
+        <ol class="incompleteTasks">
+            <h3>Pending Tasks</h3><hr><hr>
+            <ol id="taskList"></ol>
+        </ol>
+
+        <ol class="completedTasks">
+            <h3>Completed Tasks</h3><hr>
+        </ol>
+        <p style="text-align: center; margin-top: 50px;">All rights are reserved</p>
+        <p style="text-align: center;">internship @oasisinfobyte</p>
+        <h5 style="text-align: center;">Abande Abanga Emmanuel</h5>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
